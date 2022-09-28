@@ -23,7 +23,6 @@ img{
     width: 150px;
     height: 150px;
     position: relative;
-
     transform-style: preserve-3d;
 }
 
@@ -80,7 +79,7 @@ img{
 }
 
 #gameBoard{
-    max-width: 500px;
+    max-width: 1000px;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 20px;
