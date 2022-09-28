@@ -40,7 +40,7 @@ let game = {
 
     },
 
-    checkMatch: function(){
+    checkMatch : function(){
         if (!this.firstCard || !this.secondCard) {
             return false;
         }

@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(229, 229, 240);
+    background-color: rgb(85, 89, 97);
 }
 
 img{
@@ -48,8 +48,8 @@ img{
 
 .card_back{
     color: black;
-    background-color: #05c3ff;
-    font-size: 30px;
+    background-color: #00c3ff;
+    font-size: 50px;
     
 }
 
@@ -78,7 +78,7 @@ img{
 }
 
 #gameBoard{
-    max-width: 1000px;
+    max-width: 700px;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 20px;
