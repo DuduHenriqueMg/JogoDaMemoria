@@ -16,7 +16,6 @@ body{
 img{
     width: 80%;
     height: 80%;
-    
 }
 
 .card{
@@ -51,7 +50,7 @@ img{
     color: black;
     background-color: #05c3ff;
     font-size: 30px;
-    /* display: none; */
+    
 }
 
 #gameOver{
