@@ -3,26 +3,15 @@ const BACK = "card_back";
 const CARD = "card";
 const ICON = "icon";
 
-let teams = ['arsenal',
-        'barcelona',
-        'real',
-        'atletico',
-        'milan',
-        'internazionale',
-        'chelsea',
-        'liverpool',
-        'city',
-        'united',];
+
 
 let cards = null;
 
 startGame();
 
 function startGame() {
-
-    cards =createCardFromTeams(teams);
-    shuffleCards(cards);
-    initializeCards(cards);
+   
+    initializeCards(game.createCardFromTeams());
 
 }
 
@@ -30,7 +19,7 @@ function initializeCards(cards){
 
     let gameBoard = document.getElementById("gameBoard");
      
-    cards.forEach(card =>{
+    game.cards.forEach(card =>{
 
         let cardElement = document.createElement('div');
         cardElement.id = card.id;
@@ -69,52 +58,6 @@ function createCardFace(face, card, element) {
     element.appendChild(cardElementFace);
 }
 
-function shuffleCards(cards){
-
-    let currentIndex = cards.length;
-    let randomIndex = 0;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        [cards[randomIndex], cards[currentIndex]] = [cards[currentIndex], cards[randomIndex]]
-    }
-
-}
-
-function createCardFromTeams(teams) {
-
-    let cards = [];
-
-    teams.forEach((team) => {
-        cards.push(createPairFromTeam(team));
-    })
-
-    return cards.flatMap(pair => pair);
-
-}
-
-function createPairFromTeam(team){
-
-    return [{
-        id: createIdWithTeam(team),
-        icon: team,
-        flipped: false,
-    },{
-        id: createIdWithTeam(team),
-        icon: team,
-        flipped: false, 
-    }]
-
-}
-
-function createIdWithTeam(team){
-
-    return team + parseInt(Math.random() *1000);
-
-}
-
 function flipCard(){
-
+    this.classList.add("flip");
 }
