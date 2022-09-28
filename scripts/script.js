@@ -12,7 +12,28 @@ let teams = ['arsenal',
         'city',
         'united',];
 
-createCardFromTeams(teams);
+let cards = null;
+
+startGame();
+
+function startGame() {
+    cards =createCardFromTeams(teams);
+    shuffleCards(cards);
+    console.log(cards);
+}
+
+function shuffleCards(cards){
+    let currentIndex = cards.length;
+    let randomIndex = 0;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [cards[randomIndex], cards[currentIndex]] = [cards[currentIndex], cards[randomIndex]]
+    }
+
+}
 
 function createCardFromTeams(teams) {
     let cards = [];
@@ -21,7 +42,7 @@ function createCardFromTeams(teams) {
         cards.push(createPairFromTeam(team));
     }
 
-    console.log(cards.map);
+    return cards.flatMap(pair => pair);
 }
 
 function createPairFromTeam(team){
